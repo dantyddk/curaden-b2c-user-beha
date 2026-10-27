@@ -7,7 +7,7 @@
 <script>
 'use strict';
 // PASTE YOUR DEPLOYED APPS SCRIPT WEB APP /exec URL BETWEEN THE QUOTES BELOW.
-const APPS_SCRIPT_URL = 'PASTE_APPS_SCRIPT_URL_HERE';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyjoejPsfk6ozNN33JwwGpH0bJTLzwajBTD_ZIGKSH2d3o4wyYQhH-07sKq3ZSJYiZJaA/execPASTE_APPS_SCRIPT_URL_HERE';
 const $=id=>document.getElementById(id), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),fmt=n=>Number.isFinite(n)?new Intl.NumberFormat('en-US',{maximumFractionDigits:0}).format(n):'—',dec=n=>Number.isFinite(n)?new Intl.NumberFormat('en-US',{maximumFractionDigits:1}).format(n):'—',pct=n=>Number.isFinite(n)?dec(n*100)+'%':'—',div=(a,b)=>b?a/b:NaN,avg=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:NaN,money=n=>Number.isFinite(n)?new Intl.NumberFormat('en-US',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n):'—';
 let users=[],period='month',today='',meta=null;const groups=['1 order','2–4 orders','5–10 orders','>10 orders'],colors=['#003da5','#00a3e0','#e31c79','#702f8a'],cg=['New','Repeat','Churn','Unknown'],cc=['#003da5','#00a3e0','#e31c79','#747474'],promoGroups=['0%','>0–50%','>50–<100%','100%','Unknown'];
 const day=s=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(s||''))return null;let t=Date.parse(s+'T00:00:00Z');return Number.isFinite(t)&&new Date(t).toISOString().slice(0,10)===s?t:null};
